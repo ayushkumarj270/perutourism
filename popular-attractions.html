@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Attractions in Peru</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+/* Navigation Styles */
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Horizontal layout */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #f4a261; /* Hover effect for the links */
+}
+
+/* Set active color to yellow for the active page */
+nav ul li a.active {
+    color: #f4a261; /* Yellow color for active page (matching the Cuisine page) */
+}
+
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/peru-attraction.jpg'); /* Replace with your image */
+            text-align: center;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Popular Attractions Section */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 100px; /* Add space for the fixed nav bar */
+        }
+
+        #popular-attractions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 40px;
+        }
+
+        .dropdown-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .dropdown-container select {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Attraction Item Style */
+        .attraction-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .attraction-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .attraction-item h3 {
+            font-size: 1.4rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .attraction-item p {
+            font-size: 1rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="popular-attractions.html" class="active">Popular Attractions</a></li>
+        <li><a href="popular-hotels.html">Popular Hotels</a></li>
+        <li><a href="popular-restaurants.html">Popular Restaurants</a></li>
+        <li><a href="tips.html">Tips</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Popular Attractions in Peru</h1>
+            <p>Explore the iconic landmarks and attractions across Peru's most famous cities.</p>
+        </div>
+    </div>
+
+    <!-- Popular Attractions Section -->
+    <div class="container">
+        <div id="popular-attractions">
+            <h2>Explore Our Attractions</h2>
+            <div class="dropdown-container">
+                <label for="citySelect">Choose a city:</label>
+                <select id="citySelect">
+                    <option value="all">All Cities</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Cusco">Cusco</option>
+                    <option value="Arequipa">Arequipa</option>
+                    <option value="Puno">Puno</option>
+                    <option value="Iquitos">Iquitos</option>
+                </select>
+            </div>
+
+            <!-- Attraction Items for Each City -->
+            <div class="attractions-list">
+                <!-- Lima Attractions -->
+                <div class="attraction-item" data-city="Lima">
+                    <img src="images/plaza-mayor.jpg" alt="Plaza Mayor">
+                    <h3>Plaza Mayor</h3>
+                    <p>The central square of Lima, featuring historic buildings and a vibrant atmosphere.</p>
+                    <p><strong>Opening Hours:</strong> 24 hours</p>
+                </div>
+                <div class="attraction-item" data-city="Lima">
+                    <img src="images/huaca-pucllana.jpg" alt="Huaca Pucllana">
+                    <h3>Huaca Pucllana</h3>
+                    <p>An ancient archaeological site in the heart of Lima, with pyramid structures and ancient artifacts.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Lima">
+                    <img src="images/parque-kennedy.jpg" alt="Parque Kennedy">
+                    <h3>Parque Kennedy</h3>
+                    <p>A bustling park in the Miraflores district, surrounded by cafes, shops, and local art.</p>
+                    <p><strong>Opening Hours:</strong> 24 hours</p>
+                </div>
+
+                <!-- Cusco Attractions -->
+                <div class="attraction-item" data-city="Cusco">
+                    <img src="images/sacsayhuaman.jpg" alt="Sacsayhuamán">
+                    <h3>Sacsayhuamán</h3>
+                    <p>An ancient Inca ceremonial complex with impressive stonework and panoramic views of Cusco.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 8:00 AM - 5:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Cusco">
+                    <img src="images/sacred-valley.jpg" alt="Sacred Valley">
+                    <h3>Sacred Valley</h3>
+                    <p>A picturesque valley with Inca ruins, colonial towns, and stunning landscapes.</p>
+                    <p><strong>Opening Hours:</strong> 24 hours</p>
+                </div>
+                <div class="attraction-item" data-city="Cusco">
+                    <img src="images/qorikancha.jpg" alt="Qorikancha (Temple of the Sun)">
+                    <h3>Qorikancha (Temple of the Sun)</h3>
+                    <p>An Inca temple, once covered in gold, that is now a museum showcasing ancient artifacts.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 6:00 PM</p>
+                </div>
+
+                <!-- Arequipa Attractions -->
+                <div class="attraction-item" data-city="Arequipa">
+                    <img src="images/santa-catalina.jpg" alt="Santa Catalina Monastery">
+                    <h3>Santa Catalina Monastery</h3>
+                    <p>A stunning monastery complex with colorful streets and historic architecture.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Arequipa">
+                    <img src="images/colca-canyon.jpg" alt="Colca Canyon">
+                    <h3>Colca Canyon</h3>
+                    <p>One of the deepest canyons in the world, offering breathtaking views and hiking opportunities.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 6:00 AM - 6:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Arequipa">
+                    <img src="images/arequipa-historic-center.jpg" alt="Arequipa’s Historic Center">
+                    <h3>Arequipa’s Historic Center</h3>
+                    <p>A UNESCO World Heritage site with colonial architecture and lively plazas.</p>
+                    <p><strong>Opening Hours:</strong> 24 hours</p>
+                </div>
+
+                <!-- Puno Attractions -->
+                <div class="attraction-item" data-city="Puno">
+                    <img src="images/lake-titicaca.jpg" alt="Lake Titicaca">
+                    <h3>Lake Titicaca</h3>
+                    <p>The highest navigable lake in the world, with floating islands and traditional communities.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Puno">
+                    <img src="images/sillustani.jpg" alt="Sillustani Tombs">
+                    <h3>Sillustani Tombs</h3>
+                    <p>Ancient burial towers on a hill overlooking Lake Umayo.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 8:00 AM - 5:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Puno">
+                    <img src="images/puno-cathedral.jpg" alt="Puno Cathedral">
+                    <h3>Puno Cathedral</h3>
+                    <p>A beautiful baroque-style cathedral located in Puno’s main square.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 8:00 AM - 6:00 PM</p>
+                </div>
+
+                <!-- Iquitos Attractions -->
+                <div class="attraction-item" data-city="Iquitos">
+                    <img src="images/manatee-rescue-center.jpg" alt="Manatee Rescue Center">
+                    <h3>Manatee Rescue Center</h3>
+                    <p>A sanctuary for rescued Amazonian manatees, offering educational tours and wildlife conservation efforts.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 4:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Iquitos">
+                    <img src="images/belen-market.jpg" alt="Belén Market">
+                    <h3>Belén Market</h3>
+                    <p>A bustling local market offering exotic fruits, medicinal plants, and Amazonian goods.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 7:00 AM - 6:00 PM</p>
+                </div>
+                <div class="attraction-item" data-city="Iquitos">
+                    <img src="images/amazon-river-cruise.jpg" alt="Amazon River Cruise">
+                    <h3>Amazon River Cruise</h3>
+                    <p>A scenic boat trip down the Amazon River, exploring the unique wildlife and communities.</p>
+                    <p><strong>Opening Hours:</strong> Daily, 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Explore Peru's beautiful attractions and learn more about its rich culture and history.</p>
+    </footer>
+
+    <script>
+        // JavaScript for filtering by city
+        const citySelect = document.getElementById('citySelect');
+        const attractionItems = document.querySelectorAll('.attraction-item');
+
+        citySelect.addEventListener('change', function() {
+            const selectedCity = this.value;
+            attractionItems.forEach(item => {
+                if (selectedCity === 'all' || item.getAttribute('data-city') === selectedCity) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the rich history of Peru from ancient civilizations to the Spanish conquest, independence, and modern-day achievements.">
+    <title>Peru Tourism - History</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+      <style>
+    .hero-section {
+        position: relative;
+        height: 50vh; /* Upper half of the page */
+        background-size: cover;
+        background-position: center;
+        background-image: url('images/peru-history1.jpg'); /* Replace with your preferred image */
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Navigation Styles */
+    nav {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Horizontal layout */
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    nav ul li a:hover {
+        color: #f4a261; /* Hover effect for the links */
+    }
+
+    /* Set active color to an orangish shade for the active page (Cuisine and Culture) */
+    nav ul li a.active {
+        color: #f4a261; /* Orangish color for active page */
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .section {
+        margin: 50px 0;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .section img {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    /* Ensure smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .info-image {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <!-- Hero Section with Background Slideshow -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>History of Peru</h1>
+            <p>Explore the ancient civilizations, the rise of the Inca Empire, and the cultural transformations throughout Peru's rich history.</p>
+        </div>
+    </section>
+
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="history.html" class="active">History</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="popular-attractions.html">Popular Attractions</a></li>
+        <li><a href="popular-hotels.html">Popular Hotels</a></li>
+        <li><a href="popular-restaurants.html">Popular Restaurants</a></li>
+        <li><a href="tips.html">Tips</a></li>
+    </ul>
+</nav>
+
+    <!-- Main Content Area -->
+    <section class="section">
+        <div class="container">
+            <h2>The Ancient Civilizations of Peru</h2>
+            <p>Long before the rise of the Inca Empire, Peru was home to advanced civilizations, including the Norte Chico, the Moche, the Nazca, and the Tiwanaku. These cultures left behind remarkable achievements in agriculture, architecture, and art. The Moche, for example, are known for their intricate pottery and the construction of large ceremonial temples, while the Nazca are famous for the mysterious Nazca Lines, giant geoglyphs carved into the desert floor.</p>
+            <img src="images/ancient-civilizations.jpg" alt="Ancient Civilizations of Peru">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>The Inca Empire and Its Legacy</h2>
+            <p>The Inca Empire, at its height, was the largest empire in pre-Columbian America. Centered in Peru, the Incas were known for their remarkable engineering feats, such as the construction of Machu Picchu, a city built high in the Andes. The Incas also developed advanced agricultural techniques and an extensive road network that spanned across the empire, reaching present-day Ecuador, Chile, and Argentina.</p>
+            <p>In addition to their technological achievements, the Incas had a complex social structure and an organized religious system, with the Sun God Inti as their supreme deity. The Incas’ contributions to agriculture, such as the cultivation of potatoes and maize, continue to shape Peruvian cuisine today.</p>
+            <img src="images/inca-empire.jpg" alt="Inca Empire">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>The Spanish Conquest and Colonial Era</h2>
+            <p>The Spanish conquest of Peru, led by Francisco Pizarro in the 16th century, marked the beginning of nearly 300 years of Spanish colonial rule. The fall of the Inca Empire was a brutal event, and the Spanish imposed their culture, religion, and governance on the indigenous people of Peru. Despite this, the indigenous people of Peru preserved many of their traditions, languages, and spiritual practices.</p>
+            <p>During the colonial period, Peru became the heart of Spain’s South American empire, rich with silver and gold. Colonial architecture, such as the churches and plazas of Lima, reflect the lasting influence of Spanish rule. However, this period also saw significant resistance from the indigenous population, including uprisings such as the Túpac Amaru II rebellion in the 18th century.</p>
+            <img src="images/spanish-conquest.jpg" alt="Spanish Conquest">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Peru's Independence and Modern-Day History</h2>
+            <p>Peru gained independence from Spain in 1821, following a series of revolutionary wars throughout South America led by figures such as Simón Bolívar and José de la Riva-Agüero. Peru’s early years as an independent republic were marked by political instability, territorial disputes with neighboring countries, and social unrest.</p>
+            <p>In the late 20th and early 21st centuries, Peru began to experience economic growth and modernization, particularly through industries like mining, tourism, and agriculture. While the country still faces challenges such as inequality and political polarization, it remains a major player in the Latin American economy, with a rich cultural heritage that draws millions of visitors each year.</p>
+            <img src="images/independence.jpg" alt="Peru's Independence">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Modern Political and Cultural Landscape</h2>
+            <p>Today, Peru is a democratic republic, though its political landscape continues to evolve with shifting parties, governmental reforms, and social movements. The country's cultural scene is diverse, influenced by its indigenous populations, colonial history, and modern globalization. Peru is internationally renowned for its food, with world-class chefs drawing attention to traditional dishes such as ceviche, lomo saltado, and pisco cocktails.</p>
+            <p>The resurgence of indigenous rights movements has helped preserve ancient traditions, languages, and arts, while also promoting cultural recognition in modern society. Peru’s cities, such as Lima and Cusco, blend colonial architecture with contemporary art galleries, vibrant festivals, and a bustling nightlife that attracts visitors from all over the world.</p>
+            <img src="images/modern-peru.jpg" alt="Modern Political and Cultural Landscape">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Peru Tourism. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

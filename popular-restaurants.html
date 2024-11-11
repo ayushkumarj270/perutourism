@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Restaurants in Peru</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 50vh; /* Upper half of the page */
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/peru-restaurant.jpg'); /* Replace with your image */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Horizontal layout */
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        nav ul li a:hover {
+            color: #f4a261; /* Hover effect for the links */
+        }
+
+        /* Set active color to yellow for the active page */
+        nav ul li a.active {
+            color: #f4a261; /* Yellow color for active page */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .restaurant-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .restaurant-info:hover {
+            transform: translateY(-10px); /* Add hover effect */
+        }
+
+        .restaurant-info div {
+            padding: 20px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .restaurant-info h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .restaurant-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-info .price {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .restaurant-info .cuisine,
+        .restaurant-info .location {
+            font-size: 1.1rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Popular Restaurants in Peru</h1>
+            <p>Explore the top restaurants in Peru's cities, offering a unique taste of Peruvian cuisine.</p>
+        </div>
+    </div>
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="popular-attractions.html">Popular Attractions</a></li>
+        <li><a href="popular-hotels.html">Popular Hotels</a></li>
+        <li><a href="popular-restaurants.html" class="active">Popular Restaurants</a></li>
+        <li><a href="tips.html">Tips</a></li>
+    </ul>
+</nav>
+
+    <!-- Restaurant Listings -->
+    <div class="container">
+        <div class="section">
+            <h2>Explore Our Restaurants</h2>
+            <select id="cityFilter">
+                <option value="all">All Cities</option>
+                <option value="Lima">Lima</option>
+                <option value="Cusco">Cusco</option>
+                <option value="Arequipa">Arequipa</option>
+                <option value="Puno">Puno</option>
+                <option value="Iquitos">Iquitos</option>
+            </select>
+        </div>
+
+        <!-- Lima Restaurants -->
+        <div class="restaurant-info" data-city="Lima">
+            <div>
+                <h3>Central</h3>
+                <p>A world-renowned restaurant offering an innovative take on traditional Peruvian ingredients and techniques.</p>
+                <p class="price">$100 - $200 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Peruvian, Fine Dining</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Lima">
+            <div>
+                <h3>Maido</h3>
+                <p>Maido is a fine dining restaurant offering an exquisite blend of Japanese and Peruvian flavors, led by a Michelin-star chef.</p>
+                <p class="price">$150 - $250 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Japanese-Peruvian Fusion</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Lima">
+            <div>
+                <h3>La Mar</h3>
+                <p>La Mar is a vibrant, casual spot offering the best ceviches in Lima, showcasing Peru's love for seafood.</p>
+                <p class="price">$30 - $60 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Seafood, Peruvian</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <!-- Cusco Restaurants -->
+        <div class="restaurant-info" data-city="Cusco">
+            <div>
+                <h3>Chicha por Gastón Acurio</h3>
+                <p>Located in the heart of Cusco, Chicha serves traditional Andean dishes with a modern twist, created by celebrity chef Gastón Acurio.</p>
+                <p class="price">$30 - $70 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Andean, Peruvian</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Cusco">
+            <div>
+                <h3>Cicciolina</h3>
+                <p>Cicciolina offers a warm and intimate atmosphere, serving delicious Mediterranean-inspired dishes with Peruvian ingredients.</p>
+                <p class="price">$25 - $50 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Mediterranean, Peruvian</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Cusco">
+            <div>
+                <h3>Tunupa Restaurant</h3>
+                <p>Enjoy the best of Cusco's traditional and contemporary cuisine, with spectacular views of the city and the Sacred Valley.</p>
+                <p class="price">$40 - $80 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Peruvian, Buffet</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <!-- Arequipa Restaurants -->
+        <div class="restaurant-info" data-city="Arequipa">
+            <div>
+                <h3>Zig Zag</h3>
+                <p>Zig Zag is famous for its sizzling stone-cooked dishes and classic Arequipeño flavors, located in Arequipa's historic center.</p>
+                <p class="price">$40 - $80 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Arequipeño, Grilled</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Arequipa">
+            <div>
+                <h3>La Nueva Palomino</h3>
+                <p>A family-friendly restaurant serving traditional Arequipeño food, especially known for its rocoto relleno (stuffed peppers).</p>
+                <p class="price">$25 - $50 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Arequipeño, Traditional</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Arequipa">
+            <div>
+                <h3>Chicha Arequipa</h3>
+                <p>Chicha Arequipa offers a refined version of traditional Andean food, prepared by chef Gastón Acurio.</p>
+                <p class="price">$30 - $60 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Andean, Peruvian</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <!-- Puno Restaurants -->
+        <div class="restaurant-info" data-city="Puno">
+            <div>
+                <h3>Mojsa Restaurant</h3>
+                <p>Located in the center of Puno, Mojsa serves exquisite regional dishes such as trout and quinoa.</p>
+                <p class="price">$25 - $50 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Peruvian, Puno specialties</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Puno">
+            <div>
+                <h3>La Table de Mamie</h3>
+                <p>A cozy, family-owned restaurant known for its French-inspired Peruvian dishes with a great view of Lake Titicaca.</p>
+                <p class="price">$30 - $60 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> French-Peruvian Fusion</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Puno">
+            <div>
+                <h3>Puno's La Casona</h3>
+                <p>La Casona offers a delightful mix of Puno's traditional flavors and contemporary culinary techniques.</p>
+                <p class="price">$20 - $40 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Traditional Peruvian</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <!-- Iquitos Restaurants -->
+        <div class="restaurant-info" data-city="Iquitos">
+            <div>
+                <h3>Al Frío y Al Fuego</h3>
+                <p>Set on the Amazon River, this floating restaurant offers fresh fish dishes and a unique dining experience.</p>
+                <p class="price">$50 - $100 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Amazonian, Seafood</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Iquitos">
+            <div>
+                <h3>La Cueva de los Tigres</h3>
+                <p>Enjoy jungle-inspired dishes with authentic Amazonian ingredients in a secluded, rustic setting.</p>
+                <p class="price">$30 - $60 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Amazonian, Peruvian</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+
+        <div class="restaurant-info" data-city="Iquitos">
+            <div>
+                <h3>Huasai Restaurant</h3>
+                <p>A modern restaurant serving Amazonian cuisine with locally sourced ingredients and a stylish ambiance.</p>
+                <p class="price">$40 - $80 per person</p>
+                <p class="cuisine"><strong>Cuisine:</strong> Amazonian, Peruvian Fusion</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Peru Tourism. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Filter restaurants based on selected city
+            $('#cityFilter').change(function () {
+                var selectedCity = $(this).val();
+                if (selectedCity === "all") {
+                    $('.restaurant-info').show();
+                } else {
+                    $('.restaurant-info').each(function () {
+                        var restaurantCity = $(this).data('city');
+                        if (restaurantCity === selectedCity) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

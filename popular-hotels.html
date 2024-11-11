@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Hotels in Peru</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 50vh; /* Upper half of the page */
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/peru-hotel.jpg'); /* Replace with your image */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Horizontal layout */
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        nav ul li a:hover {
+            color: #f4a261; /* Hover effect for the links */
+        }
+
+        /* Set active color to yellow for the active page */
+        nav ul li a.active {
+            color: #f4a261; /* Yellow color for active page */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .hotel-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-info:hover {
+            transform: translateY(-10px); /* Add hover effect */
+        }
+
+        .hotel-info div {
+            padding: 20px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-info h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hotel-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .hotel-info .price {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .hotel-info .amenities,
+        .hotel-info .location {
+            font-size: 1.1rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .info-image {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Popular Hotels in Peru</h1>
+            <p>Discover the best hotels in Peru, from luxurious resorts to charming boutique stays.</p>
+        </div>
+    </div>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="popular-attractions.html">Popular Attractions</a></li>
+        <li><a href="popular-hotels.html" class="active">Popular Hotels</a></li>
+        <li><a href="popular-restaurants.html">Popular Restaurants</a></li>
+        <li><a href="tips.html">Tips</a></li>
+    </ul>
+</nav>
+
+    <!-- Hotel Listings -->
+    <div class="container">
+        <div class="section">
+            <h2>Explore Our Hotels</h2>
+            <select id="cityFilter">
+                <option value="all">All Cities</option>
+                <option value="Lima">Lima</option>
+                <option value="Cusco">Cusco</option>
+                <option value="Arequipa">Arequipa</option>
+                <option value="Puno">Puno</option>
+                <option value="Iquitos">Iquitos</option>
+            </select>
+        </div>
+
+        <!-- Lima Hotels -->
+        <div class="hotel-info" data-city="Lima">
+            <div>
+                <h3>Belmond Miraflores Park</h3>
+                <p>Located in the heart of Miraflores, Belmond Miraflores Park offers exceptional views of the Pacific Ocean.</p>
+                <p class="price">$300 - $500 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Spa, Pool, Fitness Center, Free Wi-Fi</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Lima">
+            <div>
+                <h3>JW Marriott Hotel Lima</h3>
+                <p>A luxurious 5-star hotel located along the beachfront in the upscale Miraflores district.</p>
+                <p class="price">$250 - $450 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Beachfront, Pool, Free Wi-Fi</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Lima">
+            <div>
+                <h3>Hotel B</h3>
+                <p>Hotel B is a boutique hotel located in the artistic Barranco district, offering a stylish and modern experience.</p>
+                <p class="price">$150 - $300 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Art Gallery, Free Wi-Fi, Breakfast</p>
+                <p class="location"><strong>Location:</strong> Lima, Peru</p>
+            </div>
+        </div>
+
+        <!-- Cusco Hotels -->
+        <div class="hotel-info" data-city="Cusco">
+            <div>
+                <h3>Belmond Hotel Monasterio</h3>
+                <p>Step into the past with a stay at this former monastery, now transformed into a luxury hotel offering a rich cultural experience.</p>
+                <p class="price">$300 - $500 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Spa, Pool, Fitness Center, Free Wi-Fi</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Cusco">
+            <div>
+                <h3>Palacio del Inka, a Luxury Collection Hotel</h3>
+                <p>A historic palace that offers both luxury and comfort, located just steps from the main square of Cusco.</p>
+                <p class="price">$250 - $450 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Spa, Pool, Free Wi-Fi</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Cusco">
+            <div>
+                <h3>Hotel Rumi Punku</h3>
+                <p>A charming hotel located in the heart of Cusco, offering a traditional Andean experience.</p>
+                <p class="price">$100 - $200 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Free Wi-Fi, Breakfast, Fitness Center</p>
+                <p class="location"><strong>Location:</strong> Cusco, Peru</p>
+            </div>
+        </div>
+
+        <!-- Arequipa Hotels -->
+        <div class="hotel-info" data-city="Arequipa">
+            <div>
+                <h3>Casa Andina Premium Arequipa</h3>
+                <p>This hotel is located in Arequipa's historic center and offers comfortable rooms with modern amenities.</p>
+                <p class="price">$150 - $250 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Pool, Free Wi-Fi, Breakfast</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Arequipa">
+            <div>
+                <h3>Hotel Libertador Arequipa</h3>
+                <p>With beautiful views of the Misti Volcano, this hotel combines traditional architecture with modern luxury.</p>
+                <p class="price">$200 - $350 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Spa, Free Wi-Fi, Restaurant</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Arequipa">
+            <div>
+                <h3>La Hostería</h3>
+                <p>A quaint hotel offering a peaceful environment, located just outside the city center.</p>
+                <p class="price">$100 - $150 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Free Wi-Fi, Breakfast, Shuttle Service</p>
+                <p class="location"><strong>Location:</strong> Arequipa, Peru</p>
+            </div>
+        </div>
+
+        <!-- Puno Hotels -->
+        <div class="hotel-info" data-city="Puno">
+            <div>
+                <h3>Libertador Lake Titicaca</h3>
+                <p>A luxurious hotel located on the shores of Lake Titicaca, offering stunning lake views.</p>
+                <p class="price">$200 - $350 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Lake Views, Restaurant, Free Wi-Fi</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Puno">
+            <div>
+                <h3>Hotel Hacienda Puno</h3>
+                <p>A charming hotel offering comfortable rooms and a unique Andean atmosphere.</p>
+                <p class="price">$150 - $250 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Free Wi-Fi, Breakfast, Bar</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Puno">
+            <div>
+                <h3>Sol Plaza Hotel</h3>
+                <p>This hotel offers a warm, friendly stay with modern amenities and great service.</p>
+                <p class="price">$100 - $200 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Free Wi-Fi, Restaurant, Shuttle Service</p>
+                <p class="location"><strong>Location:</strong> Puno, Peru</p>
+            </div>
+        </div>
+
+        <!-- Iquitos Hotels -->
+        <div class="hotel-info" data-city="Iquitos">
+            <div>
+                <h3>Victoria Regia Hotel</h3>
+                <p>A charming hotel located in the heart of Iquitos, offering modern amenities and a peaceful environment.</p>
+                <p class="price">$150 - $250 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Pool, Free Wi-Fi, Breakfast</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Iquitos">
+            <div>
+                <h3>Napo Wildlife Center</h3>
+                <p>A unique eco-lodge located in the heart of the Amazon rainforest, offering unforgettable experiences in nature.</p>
+                <p class="price">$300 - $500 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Eco-lodge, Free Wi-Fi, Guided Tours</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+
+        <div class="hotel-info" data-city="Iquitos">
+            <div>
+                <h3>Hotel El Dorado</h3>
+                <p>With its convenient location, this hotel offers excellent service and a range of amenities to make your stay comfortable.</p>
+                <p class="price">$120 - $220 per night</p>
+                <p class="amenities"><strong>Amenities:</strong> Free Wi-Fi, Breakfast, Shuttle Service</p>
+                <p class="location"><strong>Location:</strong> Iquitos, Peru</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Peru Tourism. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Filter hotels based on selected city
+            $('#cityFilter').change(function () {
+                var selectedCity = $(this).val();
+                if (selectedCity === "all") {
+                    $('.hotel-info').show();
+                } else {
+                    $('.hotel-info').each(function () {
+                        var hotelCity = $(this).data('city');
+                        if (hotelCity === selectedCity) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

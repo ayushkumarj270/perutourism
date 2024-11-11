@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore helpful travel tips for your trip to Peru. Find useful advice on safety, language, money, and more.">
+    <title>Peru Tourism - Travel Tips</title>
+    <link rel="icon" href="icon.png" type="image/png"> <!-- Add your icon here -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f4a261; /* Darker hover color */
+        }
+
+        nav ul li a.active {
+            background-color: #f4a261; /* Highlight active page */
+            color: white;
+        }
+
+        /* Main Content Area */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 50px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Accordion Styles */
+        .accordion {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion:hover {
+            background-color: #ddd;
+        }
+
+        .active, .accordion:focus {
+            background-color: #ddd;
+        }
+
+        .panel {
+            padding: 15px;
+            background-color: white;
+            display: block;
+            overflow: hidden;
+            border-left: 4px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+            visibility: hidden; /* Hide content initially */
+        }
+
+        .panel.show {
+            visibility: visible; /* Show content when active */
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="cuisine.html">Cuisine</a></li>
+            <li><a href="popular-attractions.html">Popular Attractions</a></li>
+            <li><a href="popular-hotels.html">Popular Hotels</a></li>
+            <li><a href="popular-restaurants.html">Popular Restaurants</a></li>
+            <li><a href="tips.html" class="active">Tips</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <section class="section">
+        <div class="container">
+            <h2>Travel Tips for Peru</h2>
+
+            <!-- Tip 1 -->
+            <button class="accordion">Safety Tips <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>While Peru is generally safe for tourists, it's important to take certain precautions. Always be aware of your surroundings, especially in busy areas like Lima or Cusco. Avoid displaying valuables and use hotel safes when possible. In rural areas, it's recommended to travel with a local guide for better safety and to respect local customs.</p>
+            </div>
+
+            <!-- Tip 2 -->
+            <button class="accordion">Language Tips <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>Spanish is the official language of Peru, but many people in rural areas also speak Quechua, especially in the Andean regions. English is not widely spoken outside of tourist areas. Learning a few basic phrases in Spanish or Quechua can go a long way in building rapport with locals. Simple greetings like “Hola” (Hello) and “Gracias” (Thank you) will be appreciated.</p>
+            </div>
+
+            <!-- Tip 3 -->
+            <button class="accordion">Currency and Payments <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>The official currency of Peru is the **Nuevo Sol (PEN)**. Major cities and tourist areas accept credit and debit cards, but it’s a good idea to carry some cash for smaller businesses and remote areas. ATMs are widely available in cities, and exchange services are common. However, always check the exchange rates and be cautious when withdrawing money in busy areas.</p>
+            </div>
+
+            <!-- Tip 4 -->
+            <button class="accordion">Altitude Adjustment <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>If you're traveling to high-altitude areas like Cusco or Machu Picchu, it's important to take time to acclimate. Altitude sickness is common among visitors who aren't used to elevations over 10,000 feet. Drink plenty of water, avoid heavy meals, and take it easy for the first couple of days. Medications like Diamox can help prevent altitude sickness, but consult a doctor before use.</p>
+            </div>
+
+            <!-- Tip 5 -->
+            <button class="accordion">What to Pack for Peru <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>When traveling to Peru, packing can be tricky due to the country’s diverse climate. In coastal areas like Lima, the weather is mild, but for the Andes and the Amazon, temperatures can vary significantly. Pack lightweight clothing, sturdy shoes for hiking, sunscreen, and a rain jacket. Also, don’t forget a hat, sunglasses, and insect repellent for the Amazon rainforest.</p>
+            </div>
+
+            <!-- Tip 6 -->
+            <button class="accordion">Cultural Etiquette <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>Peruvians are warm and hospitable, but it's essential to respect local customs. In rural areas, greetings with a handshake or kiss on the cheek (for friends) are common. When visiting religious or sacred sites, dress modestly and remove hats or sunglasses as a sign of respect. In restaurants, it’s polite to say “Buen provecho” (enjoy your meal) to others before eating.</p>
+            </div>
+
+            <!-- Tip 7 -->
+            <button class="accordion">Food Safety <span class="arrow">&#x2193;</span></button>
+            <div class="panel">
+                <p>While Peru is known for its delicious cuisine, be cautious when eating street food or unfamiliar dishes. Stick to food that’s been cooked thoroughly, and always drink bottled water to avoid potential stomach issues. If you're unsure about the cleanliness of a place, it’s best to avoid eating there. Popular dishes like **ceviche** are best enjoyed at reputable establishments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Peru Tourism | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Accordion functionality with smooth animation and downward arrows
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.classList.remove("show");
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    panel.classList.add("show");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

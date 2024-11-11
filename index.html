@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the beauty of Peru - a land of vibrant culture, rich history, and breathtaking landscapes. Your adventure begins here!">
+    <title>Peru Tourism - Discover the Wonders</title>
+    <link rel="icon" href="icon.png" type="image/png"> <!-- Add your icon here -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .hero-section {
+        position: relative;
+        height: 50vh; /* Upper half of the page */
+        background-size: cover;
+        background-position: center;
+        background-image: url('images/peru-home1.jpg'); /* Replace with your preferred image */
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Navigation Styles */
+    nav {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Horizontal layout */
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    nav ul li a:hover {
+        color: #f4a261; /* Hover effect for the links */
+    }
+
+    /* Set active color to an orangish shade for the active page (Homepage) */
+    nav ul li a.active {
+        color: #f4a261; /* Orangish color for active page */
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .section {
+        margin: 50px 0;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .section img {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    /* Ensure smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .info-image {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Peru Tourism</h1>
+            <p>Your journey to a land of ancient wonders, diverse landscapes, and vibrant culture begins here.</p>
+        </div>
+    </section>
+
+<nav>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="popular-attractions.html">Popular Attractions</a></li>
+        <li><a href="popular-hotels.html">Popular Hotels</a></li>
+        <li><a href="popular-restaurants.html">Popular Restaurants</a></li>
+        <li><a href="tips.html">Tips</a></li>
+    </ul>
+</nav>
+
+    <!-- Main Content Area -->
+    <section class="section">
+        <div class="container">
+            <h2>Embark on Your Adventure</h2>
+            <p>Peru is a land where adventure is never far away. With its vast landscapes, rich history, and unique culture, there's always something new to discover. From the towering peaks of the Andes to the lush Amazon rainforest, Peru offers unmatched opportunities for exploration. Whether you’re an adventurer, history enthusiast, or a nature lover, Peru has something for everyone.</p>
+            <p>Marvel at the stunning beauty of the Sacred Valley, hike the Inca Trail, or take a boat ride on Lake Titicaca—the highest navigable lake in the world. Peru is a country that challenges your sense of wonder, where every turn offers a new discovery.</p>
+        </div>
+    </section>
+
+    <!-- Natural Wonders of Peru Section -->
+    <section class="section">
+        <div class="container">
+            <h2>The Natural Wonders of Peru</h2>
+            <p>Peru's natural beauty is as diverse as it is breathtaking. From the peaks of the Andes to the depths of the Amazon, the landscapes are truly awe-inspiring. Peru is home to the Amazon River, the largest river by volume in the world, which flows through lush jungles filled with wildlife. In contrast, the Andean mountain range offers dramatic views, towering volcanoes, and stunning valleys.</p>
+            <p>Don’t miss the chance to see the mesmerizing Colca Canyon, one of the deepest canyons in the world, or explore the Peruvian Amazon, where you can spot exotic wildlife like jaguars, monkeys, and colorful birds.</p>
+            <img src="images/amazon-rainforest.jpg" alt="Amazon Rainforest">
+        </div>
+    </section>
+
+    <!-- Peruvian Hospitality and Traditions Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Experience Peruvian Hospitality</h2>
+            <p>The warmth and kindness of the Peruvian people make every visit unforgettable. Peruvians are known for their hospitality and will welcome you into their homes and communities. Experience traditional festivals that showcase vibrant dances, music, and costumes that have been passed down through generations.</p>
+            <p>From the bustling markets of Cusco to the tranquil shores of Lake Titicaca, the Peruvian way of life is a fascinating blend of old-world traditions and modern-day customs. Take part in a traditional dance, sample local handicrafts, or simply enjoy the lively atmosphere in cities like Lima and Arequipa.</p>
+            <img src="images/peruvian-culture.jpg" alt="Peruvian Culture">
+        </div>
+    </section>
+
+    <!-- Your Peru Adventure Starts Here -->
+    <section class="section">
+        <div class="container">
+            <h2>Your Peru Adventure Starts Here</h2>
+            <p>Whether you're looking to hike the ancient Inca Trail, relax in a luxury hotel by the sea, or discover remote villages in the Andes, Peru offers endless possibilities for adventure. The country’s rich history, dynamic culture, and diverse landscapes make it the ultimate travel destination.</p>
+            <p>Are you ready to explore Peru? Start your journey today by exploring the treasures Peru has to offer. Every moment spent in this beautiful country is sure to be an unforgettable experience.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Peru Tourism | All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
